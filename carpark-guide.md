@@ -207,6 +207,8 @@ You realize that you need a way to configure the car park system. You decide to 
 **Evidencing:**
 Ensure that you have completed the previous steps and created the appropriate tags. Confirm that the tags have been created by running `git tag` in the terminal and provide a screenshot of the output.
 
+![Screenshot 2024-06-01 150020.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20150020.png)
+![Screenshot 2024-06-01 150012.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20150012.png)
 ```bash
 [student@workstation ipriot-car-park-prj]$ git tag
 s1
