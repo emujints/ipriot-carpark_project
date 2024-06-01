@@ -344,6 +344,8 @@ After you have implemented the required code, commit your changes to the local r
    git tag -a "s3" -m "Added a register method to the car park class"
    ```
 
+![Screenshot 2024-06-01 152836.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20152836.png)
+
 #### Add and remove car methods
 
 When a car enters the car park, we record its plate number and update the displays. When a car exits the car park, we remove its plate number and update the displays. We can implement these behaviours in the `add_car` and `remove_car` methods.
@@ -438,6 +440,7 @@ After you have implemented the required code, commit your changes to the local r
    git commit -m "Added methods to the car park class"
    git tag -a "s4" -m "Added methods to the car park class"
    ```
+![Screenshot 2024-06-01 152917.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20152917.png)
 
 This time, we will push the tag to the remote repository:
 
@@ -450,7 +453,8 @@ Add a screenshot of the GitHub repository after pushing the tag, showing the Car
 ```markdown
 ![Added methods to the car park class](images/methods-to-car-park.png)
 ```
-
+![Screenshot 2024-06-01 152656.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20152656.png)
+![Screenshot 2024-06-01 152645.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20152645.png)
 Answer the following questions:
 > **Review Questions**
 >
