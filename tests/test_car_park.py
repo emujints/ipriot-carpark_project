@@ -1,6 +1,6 @@
 import unittest
 from car_park import CarPark
-
+from sensor import EntrySensor, ExitSensor
 class TestCarPark(unittest.TestCase):
     def setUp(self):
         self.car_park = CarPark("123 Example Street", 100)
@@ -39,6 +39,19 @@ class TestCarPark(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.car_park.remove_car("NO-1")
 
+    def test_register_raises_type_error(self):
+        with self.assertRaises(TypeError):
+            self.car_park.register("Not a Sensor or Display")
+
+    def test_register_sensor(self):
+        sensor = EntrySensor(id = 1, car_park = self.car_park)
+        self.car_park.register(sensor)
+        self.assertIn(sensor, self.car_park.sensors)
+
+    def test_register_exit_sensor(self):
+        exit_sensor = ExitSensor(id = 1, car_park=self.car_park)
+        self.car_park.register(exit_sensor)
+        self.assertIn(exit_sensor, self.car_park.sensors)
 
 if __name__ == "__main__":
     unittest.main()
