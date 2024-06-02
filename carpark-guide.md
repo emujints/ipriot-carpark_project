@@ -717,7 +717,8 @@ if __name__ == "__main__":
    ```markdown
    ![Unit tests](images/unit-tests.png)
    ```
-
+![Screenshot 2024-06-01 155445.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20155445.png)
+![Screenshot 2024-06-01 164517.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20164517.png)
 2. Commit your changes to the local repository. Tag the commit with `s6` so your lecturer can find it:
 3. Push the tag to the remote repository:
 
@@ -776,6 +777,7 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
    ```markdown
    ![Unit tests](images/unit-tests-display.png)
    ```
+![Screenshot 2024-06-01 170519.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20170519.png)
 
 2. Commit your changes to the local repository. Tag the commit with `s7` so your lecturer can find it.
 3. Push the tag to the remote repository.

@@ -12,7 +12,8 @@ class Display:
 
     def update(self, data):
         for key, value in data.items():
+            setattr(self, key, value)
             print(f"{key}: {value}")
 
     def __str__(self):
-        return f"{self.id}: Display is {"is on" if self.is_on else "if off"}"
+        return f"{self.id}: Display is {'is on' if self.is_on else 'if off'}"
