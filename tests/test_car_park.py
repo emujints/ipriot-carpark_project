@@ -1,10 +1,12 @@
 import unittest
 from car_park import CarPark
 from sensor import EntrySensor, ExitSensor
+from pathlib import Path
 class TestCarPark(unittest.TestCase):
     def setUp(self):
         self.car_park = CarPark("123 Example Street", 100)
-
+        with self.car_park.log_file.open('w'):
+            pass
     def test_car_park_initialized_with_all_attributes(self):
         self.assertIsInstance(self.car_park, CarPark)
         self.assertEqual(self.car_park.location, "123 Example Street")
@@ -13,7 +15,7 @@ class TestCarPark(unittest.TestCase):
         self.assertEqual(self.car_park.sensors, [])
         self.assertEqual(self.car_park.displays, [])
         self.assertEqual(self.car_park.available_bays, 100)
-
+        self.assertEqual(self.car_park.log_file, Path("log.txt"))
     def test_add_car(self):
         self.car_park.add_car("FAKE-001")
         self.assertEqual(self.car_park.plates, ["FAKE-001"])
@@ -52,6 +54,36 @@ class TestCarPark(unittest.TestCase):
         exit_sensor = ExitSensor(id = 1, car_park=self.car_park)
         self.car_park.register(exit_sensor)
         self.assertIn(exit_sensor, self.car_park.sensors)
+
+    def test_log_file_created(self):
+        new_carpark = CarPark("123 Example Street", 100, log_file="new_log.txt")
+        self.assertTrue(Path("new_log.txt").exists())
+
+    def tearDown(self):
+        Path("new_log.txt").unlink(missing_ok=True)
+
+    def test_car_logged_when_entering(self):
+        new_carpark = CarPark("123 Example Street", 100,
+                              log_file="new_log.txt")
+        self.car_park.add_car("NEW-001")
+        with new_carpark.log_file.open() as f:
+            last_line = f.readlines()[1]
+        self.assertIn(last_line, "NEW-001")  # check plate entered
+        self.assertIn(last_line, "entered")  # check description
+        self.assertIn(last_line, "\n")  # check entry has a new line
+
+    def test_car_logged_when_exiting(self):
+        new_carpark = CarPark("123 Example Street", 100,
+                              log_file="new_log.txt")
+        self.car_park.add_car("NEW-001")
+        self.car_park.remove_car("NEW-001")
+        with new_carpark.log_file.open() as f:
+            last_line = f.readlines()[-1]
+        self.assertIn(last_line, "NEW-001")  # check plate entered
+        self.assertIn(last_line, "exited")  # check description
+        self.assertIn(last_line, "\n")  # check entry has a new line
+
+
 
 if __name__ == "__main__":
     unittest.main()
