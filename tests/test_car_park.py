@@ -2,6 +2,7 @@ import unittest
 from car_park import CarPark
 from sensor import EntrySensor, ExitSensor
 from pathlib import Path
+from display import Display
 class TestCarPark(unittest.TestCase):
     def setUp(self):
         self.car_park = CarPark("123 Example Street", 100)
@@ -63,26 +64,26 @@ class TestCarPark(unittest.TestCase):
         Path("new_log.txt").unlink(missing_ok=True)
 
     def test_car_logged_when_entering(self):
-        new_carpark = CarPark("123 Example Street", 100,
-                              log_file="new_log.txt")
-        self.car_park.add_car("NEW-001")
+        new_carpark = CarPark("123 Example Street", 100, log_file="new_log.txt")
+        new_carpark.add_car("NEW-001")
         with new_carpark.log_file.open() as f:
-            last_line = f.readlines()[1]
-        self.assertIn(last_line, "NEW-001")  # check plate entered
-        self.assertIn(last_line, "entered")  # check description
-        self.assertIn(last_line, "\n")  # check entry has a new line
+            lines = f.readlines()
+            self.assertTrue(lines)
+            last_line = lines[-1].strip()
+            self.assertIn("NEW-001 entered", last_line)
 
     def test_car_logged_when_exiting(self):
-        new_carpark = CarPark("123 Example Street", 100,
-                              log_file="new_log.txt")
-        self.car_park.add_car("NEW-001")
-        self.car_park.remove_car("NEW-001")
+        new_carpark = CarPark("123 Example Street", 100, log_file="new_log.txt")
+        new_carpark.add_car("NEW-001")
+        new_carpark.remove_car("NEW-001")
         with new_carpark.log_file.open() as f:
-            last_line = f.readlines()[-1]
-        self.assertIn(last_line, "NEW-001")  # check plate entered
-        self.assertIn(last_line, "exited")  # check description
-        self.assertIn(last_line, "\n")  # check entry has a new line
+            lines = f.readlines()
+            self.assertTrue(lines)
+            last_line = lines[-1].strip()
+            self.assertIn("NEW-001 exited", last_line)
 
+        with self.car_park.log_file.open('w'):
+            pass
 
 
 if __name__ == "__main__":

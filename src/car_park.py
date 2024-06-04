@@ -3,6 +3,7 @@ from display import Display
 from pathlib import Path
 from datetime import datetime
 import json
+
 class CarPark:
     def __init__(self,
                  location,
@@ -10,14 +11,43 @@ class CarPark:
                  log_file = 'log.txt',
                  plates = None,
                  sensors = None,
-                 displays = None):
+                 displays = None,
+                 config_file = None):
         self.location = location
         self.capacity = capacity
         self.plates = plates or []
         self.sensors = sensors or []
         self.displays = displays or []
-        self.log_file = log_file if isinstance(log_file, Path) else Path(log_file)
+        self.log_file = Path(log_file) if isinstance(log_file, Path) else Path(log_file)
         self.log_file.touch(exist_ok=True)
+        self.config_file = Path(config_file) if config_file else None
+
+#TODO: self config_file, use Path, add optional parm to __init__
+    def write_config(self):
+        with open("config.json", "w") as f:
+            json.dump({"location": self.location,
+                       "capacity": self.capacity,
+                       "log_file": str(self.log_file)}, f)
+
+    @staticmethod
+    def from_json(file_name):
+        """ Allows the creation of an instance of a car park from json
+        >>> car_park = CarPark.from_json('some_file.txt')
+        """
+        with open(file_name, "r") as file:
+            conf = json.load(file)
+        return CarPark(location=conf["location"],
+                       capacity=int(conf["capacity"]),
+                       log_file=conf["log_file"])
+
+    @classmethod
+    def from_config(cls, config_file=Path("config.json")):
+        config_file = config_file if isinstance(config_file, Path) else Path(config_file)
+        with config_file.open() as f:
+            config = json.load(f)
+        return cls(config["location"], config["capacity"], log_file=config["log_file"])
+
+
     @property
     def available_bays(self):
         # car park available bays
