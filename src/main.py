@@ -9,6 +9,14 @@ car_park = CarPark(location="Moondalup", capacity=100, log_file="moondalup.txt")
 entry_sensor = EntrySensor(id= 1, is_active=True, car_park=car_park)
 exit_sensor = ExitSensor(id= 2, is_active=True, car_park=car_park)
 
+#registering sensors with car park
+car_park.register(entry_sensor)
+car_park.register(exit_sensor)
+
+
+
+
+
 
 
 
