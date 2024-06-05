@@ -22,7 +22,6 @@ class CarPark:
         self.log_file.touch(exist_ok=True)
         self.config_file = Path(config_file) if config_file else None
 
-#TODO: self config_file, use Path, add optional parm to __init__
     def write_config(self):
         with open("config.json", "w") as f:
             json.dump({"location": self.location,
@@ -57,12 +56,12 @@ class CarPark:
         return f"Welcome to {self.location} car park"
 
     def register(self, component):
-        if not isinstance(component, Sensor):
-            raise TypeError("Invalid component type!")
         if isinstance(component, Sensor):
             self.sensors.append(component)
         elif isinstance(component, Display):
             self.displays.append(component)
+        else:
+            raise TypeError("Invalid component type!")
 
     def _log_car(self, action, plate):
         with self.log_file.open(mode='a') as file:

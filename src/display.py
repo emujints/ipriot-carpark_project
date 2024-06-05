@@ -16,4 +16,4 @@ class Display:
             print(f"{key}: {value}")
 
     def __str__(self):
-        return f"{self.id}: Display is {'is on' if self.is_on else 'if off'}"
+        return f"{self.id}: , {self.message}, Display is {'is on' if self.is_on else 'if off'}"

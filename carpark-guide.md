@@ -65,9 +65,8 @@ This guide provides detailed step-by-step instructions for completing the projec
 Include a screenshot of your GitHub repository **after** you have pushed your initial commit.
 
 ```markdown
-![Initial commit](images/mu_image.png)
+![Initial commit](images/Screenshot 2024-06-01 142825.png)
 ```
-![Screenshot 2024-06-01 142825.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20142825.png)
 
 ### Identify classes, methods, and attributes
 
@@ -77,7 +76,7 @@ After reading the task requirements, you should be able to identify the classes,
 | ---------- |--------------------|----------------------------|
 | `CarPark`    | location, capacity | log car, add car           |
 | `Sensor`     | id, is_active      | scan plate, update carpark |
-| `Display`    | id, message        | update, display            |
+| `Display`    | id, message        | update, __str__(self)      |
 
 **Evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -106,9 +105,9 @@ Ensure you have completed the previous table and include at least two methods an
 Include a screenshot of your GitHub repository `src/` directory **after** you have pushed your changes.
 
 ```markdown
-![Added stubs for classes](images/stubs-for-classes.png)
+![Added stubs for classes](images/Screenshot 2024-06-01 143956.png)
 ```
-![Screenshot 2024-06-01 143956.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20143956.png)
+
 ### Add constructors and attributes to the classes
 
 #### CarPark class
@@ -207,8 +206,8 @@ You realize that you need a way to configure the car park system. You decide to 
 **Evidencing:**
 Ensure that you have completed the previous steps and created the appropriate tags. Confirm that the tags have been created by running `git tag` in the terminal and provide a screenshot of the output.
 
-![Screenshot 2024-06-01 150020.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20150020.png)
-![Screenshot 2024-06-01 150012.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20150012.png)
+![](images/Screenshot 2024-06-01 150020.png)
+![](images/Screenshot 2024-06-01 150012.png)
 ```bash
 [student@workstation ipriot-car-park-prj]$ git tag
 s1
@@ -344,7 +343,7 @@ After you have implemented the required code, commit your changes to the local r
    git tag -a "s3" -m "Added a register method to the car park class"
    ```
 
-![Screenshot 2024-06-01 152836.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20152836.png)
+![](images/Screenshot 2024-06-01 152836.png)
 
 #### Add and remove car methods
 
@@ -374,11 +373,11 @@ You may want to see the number of available bays, the current temperature, and t
 Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which class is responsible for each piece of information? There's no right or wrong answer here. But you should be able to justify your answer.
 
 >Q. Which class is responsible for the number of available bays (and why)?
->
+> The car park class is responsible for the number of available bays. The number of available bays is related to the overall capacity of the car park(capacity) and the number of plates that is currently parked(scan_plate). Both are the attributes of the car park class.
 >Q. Which class is responsible for the current temperature (and why)?
->
+> The "update_display" method which is in the car_park class is responsible for the temperature. So the car park class indirectly manages the temperature through its "update_display" method. 
 >Q. Which class is responsible for the time (and why)?
->
+> The log car method which is in the car park class is indirectly responsible for the date and time. It is being fetched dynamically using "datetime.now()". So that car park class is responsible for the time.
 --------
 
 ##### Detour: implement available bays
@@ -440,7 +439,7 @@ After you have implemented the required code, commit your changes to the local r
    git commit -m "Added methods to the car park class"
    git tag -a "s4" -m "Added methods to the car park class"
    ```
-![Screenshot 2024-06-01 152917.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20152917.png)
+![](images/Screenshot 2024-06-01 152917.png)
 
 This time, we will push the tag to the remote repository:
 
@@ -451,26 +450,27 @@ This time, we will push the tag to the remote repository:
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
 ```markdown
-![Added methods to the car park class](images/methods-to-car-park.png)
+![Added methods to the car park class](images/Screenshot 2024-06-01 152656.png)
+![](images/Screenshot 2024-06-01 152645.png)
 ```
-![Screenshot 2024-06-01 152656.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20152656.png)
-![Screenshot 2024-06-01 152645.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20152645.png)
+
+
 Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - _The number of available bays_  
->      `Answer here...`
+>      `Car park class is responsible for the number of available bays. Because of its capacity(attribute) and scan_plate(method). These two overall related to the number of available bays.` 
 >    - _The current temperature_  
->      `Answer here...`
+>      `Car park class is responsible for the current temperature because of its update_displays method within the car park class.`
 >    - _The time_  
->      `Answer here...`
+>      `Car park class is also responsible for the time. Because of its log_car method. The current time is obtained using datetime.now(). It is used for vehicle entering and exiting.`
 >
-> 2. **What is the difference between an attribute and a property?**  
->    `Answer here...`
+>    2. **What is the difference between an attribute and a property?**  
+>       `An attribute is a data associated with an instance of a class. A property is a kind of attribute that allows controlled access and attribute's value. They both represent data but property is more flexible data holder that can access attribute value.`
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**  
->    `Answer here...`
+>    `Using dictionary allows flexible data passing to the display. But dictionary can hold any type of data leading to incorrect data passing or incompatible data types to display.`
 
 #### Add a detect vehicle method to the Sensor class
 
@@ -715,10 +715,10 @@ if __name__ == "__main__":
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
    ```markdown
-   ![Unit tests](images/unit-tests.png)
+   ![Unit tests](images/Screenshot 2024-06-01 155445.png)
+   ![](images/Screenshot 2024-06-01 164517.png)
    ```
-![Screenshot 2024-06-01 155445.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20155445.png)
-![Screenshot 2024-06-01 164517.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20164517.png)
+   
 2. Commit your changes to the local repository. Tag the commit with `s6` so your lecturer can find it:
 3. Push the tag to the remote repository:
 
@@ -775,10 +775,10 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
    ```markdown
-   ![Unit tests](images/unit-tests-display.png)
+   ![Unit tests](images/Screenshot 2024-06-01 170519.png)
+   ![](images/Screenshot 2024-06-02 140413.png)
    ```
-![Screenshot 2024-06-01 170519.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-01%20170519.png)
-![Screenshot 2024-06-02 140413.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-02%20140413.png)
+   
 2. Commit your changes to the local repository. Tag the commit with `s7` so your lecturer can find it.
 3. Push the tag to the remote repository.
 
@@ -796,7 +796,7 @@ Finally, we'll create tests for the `Sensor` class. These tests will test the `_
 
 The car park register method should accept a `Sensor` or `Display` object. It should raise a `TypeError` if the object is neither a `Sensor` nor a `Display`. Before proceeding, think about where you would test this behaviour. Should you test it in the `CarPark` unit tests or the `Sensor` unit tests? Why?
 
-> Answer here...
+> It should be tested in a car park class. The register method is in the car park class. It ensures that only sensor or display objects are accepted. Because of that, it falls within the responsibility of testing the behavior within the car park class.
 
 Create a new unit test in the `test_car_park.py` file called `test_register_raises_type_error`. This test should create a `CarPark` object and a `str` object. It should then call the `register` method on the `CarPark` object with the `str` object as a parameter. The test should assert that a `TypeError` is raised. Here is a sample implementation:
 
@@ -1046,7 +1046,7 @@ We are going to do the latter:
 After you have merged your branch to main, push to your remote with the s10 tag. Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
 ```markdown
-![Added methods to the car park class](images/methods-to-car-park.png)
+![Added methods to the car park class](images/Screenshot 2024-06-05 092813.png)
 ```
 
 ### Final step: build a car park!
