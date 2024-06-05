@@ -13,6 +13,22 @@ exit_sensor = ExitSensor(id= 2, is_active=True, car_park=car_park)
 car_park.register(entry_sensor)
 car_park.register(exit_sensor)
 
+#creating display object
+display = Display(id= 1, message = "Welcome to Moondalup", is_on=True, car_park=car_park)
+car_park.register(display)
+
+#detecting car entering
+entry_sensor.detect_vehicle()
+
+#updating display
+car_park.update_displays()
+
+#detecting car leaving
+exit_sensor.detect_vehicle()
+
+#updating display
+car_park.update_displays()
+
 
 
 
