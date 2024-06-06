@@ -64,9 +64,8 @@ This guide provides detailed step-by-step instructions for completing the projec
 **Evidencing:**
 Include a screenshot of your GitHub repository **after** you have pushed your initial commit.
 
-```markdown
+
 ![Initial commit](images/Screenshot 2024-06-01 142825.png)
-```
 
 ### Identify classes, methods, and attributes
 
@@ -104,9 +103,7 @@ Ensure you have completed the previous table and include at least two methods an
 **Evidencing:**
 Include a screenshot of your GitHub repository `src/` directory **after** you have pushed your changes.
 
-```markdown
 ![Added stubs for classes](images/Screenshot 2024-06-01 143956.png)
-```
 
 ### Add constructors and attributes to the classes
 
@@ -449,11 +446,9 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
+
 ![Added methods to the car park class](images/Screenshot 2024-06-01 152656.png)
 ![](images/Screenshot 2024-06-01 152645.png)
-```
-
 
 Answer the following questions:
 > **Review Questions**
@@ -714,11 +709,11 @@ if __name__ == "__main__":
 
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
-   ```markdown
-   ![Unit tests](images/Screenshot 2024-06-01 155445.png)
-   ![](images/Screenshot 2024-06-01 164517.png)
-   ```
-   
+
+[Unit tests](images/Screenshot 2024-06-01 155445.png)   
+![](images/Screenshot 2024-06-01 164517.png)
+
+
 2. Commit your changes to the local repository. Tag the commit with `s6` so your lecturer can find it:
 3. Push the tag to the remote repository:
 
@@ -774,11 +769,10 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
-   ```markdown
-   ![Unit tests](images/Screenshot 2024-06-01 170519.png)
-   ![](images/Screenshot 2024-06-02 140413.png)
-   ```
-   
+
+![Unit tests](images/Screenshot 2024-06-01 170519.png)
+![](images/Screenshot 2024-06-02 140413.png)
+
 2. Commit your changes to the local repository. Tag the commit with `s7` so your lecturer can find it.
 3. Push the tag to the remote repository.
 
@@ -1045,10 +1039,7 @@ We are going to do the latter:
 **Evidencing:**
 After you have merged your branch to main, push to your remote with the s10 tag. Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
 ![Added methods to the car park class](images/Screenshot 2024-06-05 092813.png)
-```
-
 ### Final step: build a car park!
 
 In the final step, you will create a `main.py` file that 'drives' a car park. This file will create a car park, add sensors and displays, and simulate cars entering and exiting the car park. You will then run the file to see the car park in action.
@@ -1082,9 +1073,7 @@ In your final submission, you must include any files you created or modified. Th
 
 1. Add a screenshot of the output of the `main.py` file:
 
-   ```markdown
-   ![Main.py output](images/main-py.png)
-   ```
+![Screenshot 2024-06-06 103723.png](..%2F..%2F..%2FOneDrive%20-%20TAFE%2FPictures%2FScreenshots%2FScreenshot%202024-06-06%20103723.png)
 
 2. Commit your changes to the local repository. Tag the commit with `v1`, so your lecturer can find it. Ensure the commit includes the log and config files (though you would typically ignore them).
 3. Push the tag to the remote repository.

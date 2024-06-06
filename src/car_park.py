@@ -12,15 +12,15 @@ class CarPark:
                  plates = None,
                  sensors = None,
                  displays = None,
-                 config_file = None):
+                 ):
         self.location = location
         self.capacity = capacity
         self.plates = plates or []
         self.sensors = sensors or []
         self.displays = displays or []
-        self.log_file = Path(log_file) if isinstance(log_file, Path) else Path(log_file)
+        self.log_file = Path(log_file)
+        self.log_file = log_file if isinstance(log_file, Path) else Path(log_file)
         self.log_file.touch(exist_ok=True)
-        self.config_file = Path(config_file) if config_file else None
 
     def write_config(self):
         with open("config.json", "w") as f:
@@ -31,7 +31,7 @@ class CarPark:
     @staticmethod
     def from_json(file_name):
         """ Allows the creation of an instance of a car park from json
-        >>> car_park = CarPark.from_json('some_file.txt')
+        >>> car_park = CarPark.from_json('log.txt')
         """
         with open(file_name, "r") as file:
             conf = json.load(file)
@@ -66,6 +66,7 @@ class CarPark:
     def _log_car(self, action, plate):
         with self.log_file.open(mode='a') as file:
             file.write(f'{plate} {action} on the {datetime.now().strftime("%d-%m %H:%M")}\n')
+        print(f'Logged car with plate {plate} {action} on the {datetime.now().strftime("%d-%m %H:%M")}\n')
 
     def add_car(self, plate):
         self.plates.append(plate)
@@ -75,11 +76,10 @@ class CarPark:
         self.plates.remove(plate)
         self._log_car("exited", plate)
 
+
     def update_displays(self):
         for display in self.displays:
             display.update({"Bays": self.available_bays,
                             "Temperature": 40,
                             "News": "something happened"})
             print(f"Updating: {display}")
-
-

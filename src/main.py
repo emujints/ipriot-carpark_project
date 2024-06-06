@@ -29,10 +29,12 @@ exit_sensor.detect_vehicle()
 #updating display
 car_park.update_displays()
 
+# Drive 10 cars into the car park
+for _ in range(10):
+    entry_sensor.detect_vehicle()
+    car_park.update_displays()
 
-
-
-
-
-
-
+# Drive 2 cars out of the car park
+for _ in range(2):
+    exit_sensor.detect_vehicle()
+    car_park.update_displays()
