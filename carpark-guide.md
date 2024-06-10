@@ -66,7 +66,7 @@ This guide provides detailed step-by-step instructions for completing the projec
 Include a screenshot of your GitHub repository **after** you have pushed your initial commit.
 
 
-![Initial commit](images/Screenshot 2024-06-01 142825.png?raw=true)
+![Initial commit](images/1.png)
 
 ### Identify classes, methods, and attributes
 
@@ -104,7 +104,7 @@ Ensure you have completed the previous table and include at least two methods an
 **Evidencing:**
 Include a screenshot of your GitHub repository `src/` directory **after** you have pushed your changes.
 
-![Added stubs for classes](images/Screenshot 2024-06-01 143956.png?raw=true)
+![Added stubs for classes](images/2.png)
 
 ### Add constructors and attributes to the classes
 
@@ -204,8 +204,8 @@ You realize that you need a way to configure the car park system. You decide to 
 **Evidencing:**
 Ensure that you have completed the previous steps and created the appropriate tags. Confirm that the tags have been created by running `git tag` in the terminal and provide a screenshot of the output.
 
-![Screenshot 2024-06-01 150020.png](images/Screenshot 2024-06-01 150020.png?raw=true)
-![Screenshot 2024-06-01 150012.png](images/Screenshot 2024-06-01 150012.png?raw=true)
+![Screenshot 2024-06-01 150020.png](images/4.png)
+![Screenshot 2024-06-01 150012.png](images/3.png)
 ```bash
 [student@workstation ipriot-car-park-prj]$ git tag
 s1
@@ -341,7 +341,7 @@ After you have implemented the required code, commit your changes to the local r
    git tag -a "s3" -m "Added a register method to the car park class"
    ```
 
-![Screenshot 2024-06-01 152836.png](images/Screenshot 2024-06-01 152836.png?raw=true)
+![Screenshot 2024-06-01 152836.png](images/5.png)
 
 #### Add and remove car methods
 
@@ -442,7 +442,7 @@ After you have implemented the required code, commit your changes to the local r
    git commit -m "Added methods to the car park class"
    git tag -a "s4" -m "Added methods to the car park class"
    ```
-![Screenshot 2024-06-01 152917.png](images/Screenshot 2024-06-01 152917.png?raw=true)
+![Screenshot 2024-06-01 152917.png](images/6.png)
 
 This time, we will push the tag to the remote repository:
 
@@ -453,8 +453,8 @@ This time, we will push the tag to the remote repository:
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
 
-![Added methods to the car park class](images/Screenshot 2024-06-01 152656.png?raw=true)
-![Screenshot 2024-06-01 152645.png](images/Screenshot 2024-06-01 152645.png?raw=true)
+![Added methods to the car park class](images/7.png)
+![Screenshot 2024-06-01 152645.png](images/8.png)
 
 Answer the following questions:
 > **Review Questions**
@@ -716,8 +716,8 @@ if __name__ == "__main__":
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
 
-![Unit tests](images/Screenshot 2024-06-01 155445.png?raw=true)   
-![Screenshot 2024-06-01 164517.png](images/Screenshot 2024-06-01 164517.png?raw=true)
+![Unit tests](images/9.png)   
+![Screenshot 2024-06-01 164517.png](images/10.png)
 
 
 2. Commit your changes to the local repository. Tag the commit with `s6` so your lecturer can find it:
@@ -776,8 +776,8 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
 
-![Unit tests](images/Screenshot 2024-06-01 170519.png?raw=true)
-![Screenshot 2024-06-02 140413.png](images/Screenshot 2024-06-02 140413.png?raw=true)
+![Unit tests](images/11.png)
+![](images/12.png)
 
 2. Commit your changes to the local repository. Tag the commit with `s7` so your lecturer can find it.
 3. Push the tag to the remote repository.
@@ -1045,7 +1045,7 @@ We are going to do the latter:
 **Evidencing:**
 After you have merged your branch to main, push to your remote with the s10 tag. Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-![Added methods to the car park class](images/Screenshot 2024-06-05 092813.png?raw=true)
+![Added methods to the car park class](images/13.png)
 ### Final step: build a car park!
 
 In the final step, you will create a `main.py` file that 'drives' a car park. This file will create a car park, add sensors and displays, and simulate cars entering and exiting the car park. You will then run the file to see the car park in action.
@@ -1079,7 +1079,7 @@ In your final submission, you must include any files you created or modified. Th
 
 1. Add a screenshot of the output of the `main.py` file:
 
-![Screenshot 2024-06-06 103723.png](images/Screenshot 2024-06-06 103723.png)
+![](images/14.png)
 2. Commit your changes to the local repository. Tag the commit with `v1`, so your lecturer can find it. Ensure the commit includes the log and config files (though you would typically ignore them).
 3. Push the tag to the remote repository.
 
@@ -1090,11 +1090,11 @@ In your final submission, you must include any files you created or modified. Th
 4. Release your code on GitHub. You can do this by going to the releases section and selecting "Create a new release". Give the release a title ("Project Submission") and description. Then click "Publish release". Include a screenshot of the release:
 
 
-![Screenshot 2024-06-07 100854.png](images/Screenshot 2024-06-07 100854.png?raw=true)
-![Screenshot 2024-06-07 101032.png](images/Screenshot 2024-06-07 101032.png?raw=true)
+![](images/15.png)
+![](images/16.png)
 
 5. Congratulations! You have completed the project. You can now submit the assignment via Blackboard. Take the time to reflect on your work and write any notes and observations down.
 
 --------
 
-![Image of a car park on the moon](images/moon_park.png?raw=true)
+![Image of a car park on the moon](images/moon_park.png)
