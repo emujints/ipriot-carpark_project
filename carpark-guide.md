@@ -3,7 +3,7 @@
 > **Assessment Guide:**
 > A step-by-step worksheet you can use to complete all the project's coding and version control requirements. Please raise any issues you identify with the guide [here](https://github.com/NM-TAFE/civ-ipriot-in-class-demos/issues) using the tag `project-guide`.
 
-![](images/new_car_park.png?raw=true)
+![](images/img.png?raw=true)
 
 
 ## Overview
